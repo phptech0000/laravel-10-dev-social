@@ -16,7 +16,7 @@
             </h1>
             <nav class="flex gap-2 items-center">
                 <a class="font-bold uppercase text-gray-600 text-sm"href="#">Login</a>
-                <a class="font-bold uppercase text-gray-600 text-sm"href="{{route('register')}}">Crear Cuenta</a>
+                <a class="font-bold uppercase text-gray-600 text-sm"href="{{route('register')}}">Register</a>
             </nav>
         </div>
        </header>
@@ -27,7 +27,7 @@
             @yield('contenido')
        </main>
        <footer class="text-center p-5 text-gray-500 font-bold uppercase mt-10">
-            DevsTagram - Todos los derechos reservados {{date('Y')}}
+            DevsTagram - All rights reserved {{date('Y')}}
        </footer>
     </body>
 </html>
