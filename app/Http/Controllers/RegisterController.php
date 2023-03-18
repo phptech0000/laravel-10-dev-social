@@ -16,7 +16,7 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
 
-        //modificando el request[username] para validarlo después de su transformación
+        //modifiying request[username] to validate the slug form of the value
         $request->request->add(["username" => Str::slug($request->username)]);
         
         $this->validate($request,[
@@ -32,5 +32,8 @@ class RegisterController extends Controller
             'email'=>$request->email,
             'password'=>Hash::make($request->password) 
         ]);
+
+        //redirect users to the wall
+        return redirect(route('post.index'));
     }
 }
