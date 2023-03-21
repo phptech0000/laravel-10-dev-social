@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use auth;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -31,6 +32,12 @@ class RegisterController extends Controller
             'username' => $request->username,
             'email'=>$request->email,
             'password'=>Hash::make($request->password) 
+        ]);
+
+        //Autenticar al usuario
+        auth()->attempt([
+            'email'=> $request->email,
+            'password'=> $request->password
         ]);
 
         //redirect users to the wall
