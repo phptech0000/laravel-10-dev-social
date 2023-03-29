@@ -10,9 +10,11 @@ Login to DevsTagram
             <img src="{{ asset('img/login.jpg')}}" alt="Image user login" >
         </div>
         <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl">
-            <form novalidate>
+            <form method="POST" action="{{route("login")}}" novalidate>
                 @csrf               
-                
+                @if(session("message"))
+                    <p class=" bg-red-500 text-white my-0 rounded-md p-2 text-sm text-center">{{session("message")}}</p>  
+                @endif
                 <div class="mb-5">
                     <label for="email" class="mb-2 block uppercase text-gray-500 font-bold">
                         Email
