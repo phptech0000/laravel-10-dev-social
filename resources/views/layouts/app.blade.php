@@ -19,7 +19,7 @@
                     <a class="font-bold  text-gray-600 text-sm"href="{{route('login')}}">
                         Hola: <span class="font-normal">{{auth()->user()->username}}</span>
                     </a>
-                    <a class="font-bold uppercase text-gray-600 text-sm"href="#">Cerrar Sesion</a>
+                    <a class="font-bold uppercase text-gray-600 text-sm"href="{{route('logout')}}">Cerrar Sesion</a>
                 </nav>
             @endauth
             
