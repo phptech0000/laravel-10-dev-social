@@ -23,6 +23,6 @@ class LoginController extends Controller
             return back()->with("message","Incorrect username or password");
         }
 
-        return redirect()->route("post.index");
+        return redirect()->route("post.index",auth()->user()->username);
     }
 }
