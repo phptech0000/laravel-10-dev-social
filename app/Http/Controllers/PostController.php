@@ -18,4 +18,8 @@ class PostController extends Controller
         ];
        return view('dashboard',$data);
     }
+    public function create()
+    {
+        dd("Creando post...");
+    }
 }
