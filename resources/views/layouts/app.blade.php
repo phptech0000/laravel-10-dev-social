@@ -7,6 +7,7 @@
         <title>Devstagram: @yield('titulo')</title> 
         
         @vite('resources/css/app.css')
+        @vite('resources/js/app.js')
     </head>
     <body class=" bg-gray-100">
        <header class="p-5 border-b bg-white shadow">
@@ -23,7 +24,7 @@
                         </svg>                          
                         Create
                     </a>
-                    <a class="font-bold  text-gray-600 text-sm"href="{{route('login')}}">
+                    <a class="font-bold  text-gray-600 text-sm"href="{{ route('post.index', auth()->user()->username )}}">
                         Hi: <span class="font-normal">{{auth()->user()->username}}</span>
                     </a>
                     <form action="{{route('logout')}}" method="post">
