@@ -23,6 +23,6 @@ dropzone.on("error",function(file,message){
     console.log(message)
 })
 
-dropzone.on("removedfile",function()){
+dropzone.on("removedfile",function(){
     console.log("file removed");
-}
+})
