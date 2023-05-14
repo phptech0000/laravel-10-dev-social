@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('titulo')
+@section('title')
     Create a New Post
 @endsection
 @push('styles')
@@ -15,7 +15,7 @@
             </form>
         </div>
         <div class="md:w-1/2 p-10  bg-white rounded-lg shadow-xl mt-10 m:mt-0">
-            <form action="{{ route('register') }}" method="POST">
+            <form action="{{ route('post.store') }}" method="POST">
                 @csrf
                 <div class="mb-5">
                     <label for="title" class="mb-2 block uppercase text-gray-500 font-bold">
