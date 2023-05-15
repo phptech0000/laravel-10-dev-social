@@ -17,6 +17,6 @@ class ImagenController extends Controller
         $serverImage->fit(1000,1000);
         $imagePath = public_path('uploads')."/".$imageName;
         $serverImage->save($imagePath);
-        return response()->json(['imagen'=>$imageName]);
+        return response()->json(['image'=>$imageName]);
     }
 }

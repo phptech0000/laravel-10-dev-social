@@ -48,6 +48,12 @@
                         <p class=" bg-red-500 text-white my-0 rounded-md p-2 text-sm text-center">{{$message}}</p>                        
                     @enderror
                 </div>
+                <div class="mb-5">
+                    <input name="image" type="hidden" />
+                    @error("image")
+                        <p class=" bg-red-500 text-white my-0 rounded-md p-2 text-sm text-center">{{$message}}</p>                        
+                    @enderror
+                </div>
                 <input type="submit" value="Create Post" class="bg-sky-600  hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg">
             </form> 
         </div>
