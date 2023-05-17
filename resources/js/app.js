@@ -9,6 +9,20 @@ const dropzone= new Dropzone('#dropzone',{
     dictRemoveFile: 'Remove file',
     maxFiles: 1,
     uploadMultiple: false,
+
+    init: function(){
+        if(document.querySelector("[name='image']").value.trim())
+        {
+            const publishedImage={}
+            publishedImage.size=1234;
+            publishedImage.name=document.querySelector("[name='image']").value;
+
+            this.options.addedfile.call(this,publishedImage);
+            this.options.thumbnail.call(this,publishedImage,`/uploads/${publishedImage.name}`);
+
+            publishedImage.previewElement.classList.add('dz-success','dz-complete')
+        }
+    }
 })
 
 
@@ -22,5 +36,5 @@ dropzone.on("error",function(file,message){
 })
 
 dropzone.on("removedfile",function(){
-    console.log("file removed");
+    document.querySelector('[name="image"]').value='';
 })
